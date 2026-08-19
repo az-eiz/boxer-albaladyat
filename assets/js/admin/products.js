@@ -47,23 +47,6 @@ async function loadProducts() {
         .forEach(button => button.addEventListener("click", deleteProduct));
 }
 
-async function uploadImage(file) {
-    const extension = file.name.split(".").pop().toLowerCase();
-    const path = `products/${crypto.randomUUID()}.${extension}`;
-
-    const { error } = await window.db.storage
-        .from("site-images")
-        .upload(path, file);
-
-    if (error) throw error;
-
-    const { data } = window.db.storage
-        .from("site-images")
-        .getPublicUrl(path);
-
-    return data.publicUrl;
-}
-
 async function saveProduct(event) {
     const card = event.target.closest(".admin-product");
     const id = card.dataset.id;

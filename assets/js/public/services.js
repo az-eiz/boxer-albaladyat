@@ -21,7 +21,10 @@
         grid.innerHTML = services.map(service => `
             <div class="service-card reveal">
                 <div class="service-icon-wrap">
-                    <i class="fas fa-wrench service-icon"></i>
+                    ${service.image
+                ? `<img src="${escapeHtml(service.image)}" alt="${escapeHtml(service.title || "")}">`
+                : '<i class="fas fa-wrench service-icon"></i>'
+            }
                 </div>
                 <h4>${escapeHtml(service.title || "")}</h4>
                 <p>${escapeHtml(service.description || "")}</p>

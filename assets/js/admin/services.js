@@ -11,6 +11,8 @@ async function loadServices() {
 
     $("servicesAdmin").innerHTML = data.map(service => `
         <article class="admin-service" data-id="${service.id}">
+            ${service.image ? `<img class="product-preview" src="${escapeHtml(service.image)}" alt="${escapeHtml(service.title || "خدمة")}">` : ""}
+
             <label>اسم الخدمة</label>
             <input class="service-title"
                    value="${escapeHtml(service.title || "")}">
@@ -22,6 +24,9 @@ async function loadServices() {
             <input class="service-price"
                    type="number"
                    value="${service.price || 0}">
+
+            <label>صورة الخدمة (اختياري، إذا ما رفعت صورة تظهر أيقونة افتراضية)</label>
+            <input class="service-file" type="file" accept="image/*">
 
             <label>
                 <input class="service-available"
@@ -50,21 +55,32 @@ async function loadServices() {
 async function saveService(event) {
     const card = event.target.closest(".admin-service");
 
-    const update = {
-        title: card.querySelector(".service-title").value.trim(),
-        description: card.querySelector(".service-description").value.trim(),
-        price: Number(card.querySelector(".service-price").value),
-        available: card.querySelector(".service-available").checked
-    };
+    try {
+        const file = card.querySelector(".service-file").files[0];
 
-    const { error } = await window.db
-        .from("services")
-        .update(update)
-        .eq("id", card.dataset.id);
+        const update = {
+            title: card.querySelector(".service-title").value.trim(),
+            description: card.querySelector(".service-description").value.trim(),
+            price: Number(card.querySelector(".service-price").value),
+            available: card.querySelector(".service-available").checked
+        };
 
-    $("servicesMessage").textContent = error
-        ? `خطأ: ${error.message}`
-        : "تم حفظ الخدمة ✅";
+        if (file) {
+            update.image = await uploadImage(file, "services");
+        }
+
+        const { error } = await window.db
+            .from("services")
+            .update(update)
+            .eq("id", card.dataset.id);
+
+        if (error) throw error;
+
+        $("servicesMessage").textContent = "تم حفظ الخدمة ✅";
+        await loadServices();
+    } catch (error) {
+        $("servicesMessage").textContent = `خطأ: ${error.message}`;
+    }
 }
 
 async function deleteService(event) {
@@ -92,6 +108,7 @@ function wireServices() {
             title: "خدمة جديدة",
             description: "",
             price: 0,
+            image: "",
             available: true
         });
 
