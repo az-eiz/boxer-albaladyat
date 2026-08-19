@@ -30,12 +30,12 @@ async function loadProducts() {
             <label>استبدال الصورة</label>
             <input class="product-file" type="file" accept="image/*">
 
-            <button class="save-product btn btn-primary">
-                حفظ التعديل
+            <button class="save-product admin-btn primary small">
+                <i class="fas fa-floppy-disk"></i> حفظ التعديل
             </button>
 
-            <button class="delete-product btn">
-                حذف المنتج
+            <button class="delete-product admin-btn danger small">
+                <i class="fas fa-trash"></i> حذف المنتج
             </button>
         </article>
     `).join("");

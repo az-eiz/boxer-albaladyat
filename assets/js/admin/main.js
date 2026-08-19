@@ -1,3 +1,4 @@
+wireTabs();
 wireAuth();
 wireSettings();
 wireProducts();

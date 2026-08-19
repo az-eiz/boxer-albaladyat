@@ -30,12 +30,12 @@ async function loadServices() {
                 الخدمة متاحة
             </label>
 
-            <button class="save-service btn btn-primary">
-                حفظ الخدمة
+            <button class="save-service admin-btn primary small">
+                <i class="fas fa-floppy-disk"></i> حفظ الخدمة
             </button>
 
-            <button class="delete-service btn">
-                حذف الخدمة
+            <button class="delete-service admin-btn danger small">
+                <i class="fas fa-trash"></i> حذف الخدمة
             </button>
         </article>
     `).join("");

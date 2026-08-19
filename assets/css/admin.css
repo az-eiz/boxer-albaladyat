@@ -1,63 +1,283 @@
-.admin-panel {
-    max-width: 1050px;
-    margin: 30px auto;
-    padding: 30px;
-    background: #fff;
-    border-radius: 20px;
-    box-shadow: 0 10px 35px #0002;
+body {
+    background: var(--background);
 }
 
-.admin-panel h1,
-.admin-panel h2 {
+[hidden] {
+    display: none !important;
+}
+
+/* Login screen */
+.admin-login-screen {
+    min-height: 100vh;
+    display: grid;
+    place-items: center;
+    padding: 1.5rem;
+}
+
+.admin-login-card {
+    width: min(420px, 100%);
+    background: white;
+    border-radius: 20px;
+    box-shadow: 0 10px 35px rgba(23, 32, 42, .1);
+    padding: 2.2rem 1.8rem;
+    text-align: center;
+}
+
+.admin-login-icon {
+    color: var(--primary);
+    font-size: 2.4rem;
+    margin-bottom: .6rem;
+}
+
+.admin-login-card h1 {
+    color: var(--dark);
+    font-size: 1.3rem;
+}
+
+.admin-login-subtitle {
+    color: var(--muted);
+    font-size: .85rem;
     margin-bottom: 1.5rem;
 }
 
-.admin-panel label {
-    display: block;
-    margin-top: 1rem;
-    font-weight: 700;
+.admin-login-card label {
+    text-align: right;
 }
 
-.admin-panel input,
-.admin-panel textarea {
+/* Top bar */
+.admin-topbar {
+    background: var(--dark);
+    color: white;
+    padding: 1rem 1.2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.admin-topbar-brand {
+    display: flex;
+    align-items: center;
+    gap: .6rem;
+    font-weight: 800;
+    font-size: 1.05rem;
+}
+
+.admin-topbar-brand i {
+    color: var(--accent);
+    font-size: 1.3rem;
+}
+
+/* Tabs */
+.admin-tabs {
+    display: flex;
+    gap: .4rem;
+    overflow-x: auto;
+    padding: .8rem 1rem;
+    background: white;
+    border-bottom: 1px solid var(--border);
+    position: sticky;
+    top: 61px;
+    z-index: 90;
+    -webkit-overflow-scrolling: touch;
+}
+
+.admin-tab {
+    flex: 0 0 auto;
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+    border: 0;
+    background: var(--background);
+    color: var(--muted);
+    padding: .6rem 1rem;
+    border-radius: 999px;
+    font-family: inherit;
+    font-size: .85rem;
+    font-weight: 700;
+    cursor: pointer;
+    white-space: nowrap;
+    transition: background .15s, color .15s;
+}
+
+.admin-tab:hover {
+    background: #eef2f4;
+}
+
+.admin-tab.active {
+    background: var(--primary);
+    color: white;
+}
+
+/* Content */
+.admin-content {
+    width: min(900px, 94%);
+    margin: 1.5rem auto 4rem;
+}
+
+.admin-panel-section {
+    background: white;
+    border-radius: 18px;
+    box-shadow: 0 8px 24px rgba(23, 32, 42, .06);
+    padding: 1.6rem;
+}
+
+.admin-section-header {
+    margin-bottom: 1.2rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid var(--border);
+}
+
+.admin-section-header h2 {
+    color: var(--dark);
+    font-size: 1.2rem;
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+}
+
+.admin-section-header h2 i {
+    color: var(--primary);
+}
+
+.admin-section-header p {
+    color: var(--muted);
+    font-size: .85rem;
+    margin-top: .3rem;
+}
+
+/* Form fields */
+.admin-panel-section label,
+.admin-login-card label {
+    display: block;
+    margin-top: 1rem;
+    margin-bottom: .35rem;
+    font-weight: 700;
+    font-size: .85rem;
+    color: var(--dark);
+}
+
+.admin-panel-section input,
+.admin-panel-section textarea,
+.admin-login-card input {
     display: block;
     width: 100%;
     box-sizing: border-box;
-    margin: 10px 0;
-    padding: 13px;
-    border: 1px solid #ddd;
+    padding: .8rem .9rem;
+    border: 1px solid var(--border);
     border-radius: 10px;
     font-family: inherit;
+    font-size: .9rem;
 }
 
-.admin-panel button {
-    margin-top: 1.2rem;
+.admin-panel-section input:focus,
+.admin-panel-section textarea:focus,
+.admin-login-card input:focus {
+    outline: none;
+    border-color: var(--primary);
 }
 
+.admin-panel-section textarea {
+    resize: vertical;
+    min-height: 80px;
+}
+
+/* Buttons */
 .admin-btn {
     border: 0;
     border-radius: 10px;
-    padding: 12px 20px;
-    margin: 8px 4px;
+    padding: .8rem 1.3rem;
+    font-family: inherit;
+    font-size: .9rem;
     cursor: pointer;
     font-weight: 700;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: .5rem;
+    transition: transform .15s, background .15s;
+}
+
+.admin-btn:hover {
+    transform: translateY(-1px);
+}
+
+.admin-btn.block {
+    width: 100%;
+    margin-top: 1.4rem;
+}
+
+.admin-btn.small {
+    padding: .5rem .9rem;
+    font-size: .8rem;
 }
 
 .admin-btn.primary {
-    background: #1769aa;
+    background: var(--primary);
     color: white;
+}
+
+.admin-btn.primary:hover {
+    background: var(--primary-dark);
 }
 
 .admin-btn.danger {
-    background: #c62828;
+    background: #dc2626;
     color: white;
 }
 
+.admin-message {
+    margin-top: .8rem;
+    font-size: .85rem;
+    color: var(--primary-dark);
+    font-weight: 700;
+    min-height: 1em;
+}
+
+/* Product / service / delivery / testimonial cards */
 .admin-product,
 .admin-service {
-    padding: 20px;
-    margin: 15px 0;
-    background: #f7f8fa;
-    border: 1px solid #e5e7eb;
+    padding: 1.2rem;
+    margin: 1rem 0;
+    background: var(--background);
+    border: 1px solid var(--border);
     border-radius: 14px;
+}
+
+.admin-product .product-preview {
+    width: 100%;
+    max-height: 160px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: .5rem;
+    background: #eef2f4;
+}
+
+.admin-product .admin-btn,
+.admin-service .admin-btn {
+    margin-top: .8rem;
+    margin-left: .5rem;
+}
+
+@media (max-width: 640px) {
+    .admin-content {
+        width: 100%;
+        padding: 0 .8rem;
+        margin-top: 1rem;
+    }
+
+    .admin-panel-section {
+        padding: 1.1rem;
+        border-radius: 14px;
+    }
+
+    .admin-topbar {
+        padding: .8rem 1rem;
+    }
+
+    .admin-tabs {
+        top: 57px;
+    }
 }

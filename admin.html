@@ -4,60 +4,146 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>لوحة تحكم Boxer Albaladyat</title>
+    <title>لوحة تحكم بوكسر البلديات</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="stylesheet" href="assets/css/base.css">
     <link rel="stylesheet" href="assets/css/admin.css">
 </head>
 
 <body>
-    <main class="admin-panel">
-        <h1>لوحة تحكم Boxer Albaladyat</h1>
+    <section id="loginBox" class="admin-login-screen">
+        <div class="admin-login-card">
+            <i class="fas fa-motorcycle admin-login-icon"></i>
+            <h1>بوكسر البلديات</h1>
+            <p class="admin-login-subtitle">لوحة تحكم إدارة الموقع</p>
 
-        <section id="loginBox">
-            <input id="email" type="email" placeholder="البريد الإلكتروني">
-            <input id="password" type="password" placeholder="كلمة المرور">
-            <button id="loginButton" class="admin-btn primary">تسجيل الدخول</button>
-            <p id="loginMessage"></p>
-        </section>
+            <label for="email">البريد الإلكتروني</label>
+            <input id="email" type="email" placeholder="example@email.com">
 
-        <section id="dashboard" hidden>
-            <button id="logoutButton" class="admin-btn danger">تسجيل الخروج</button>
+            <label for="password">كلمة المرور</label>
+            <input id="password" type="password" placeholder="••••••••">
 
-            <h2>إعدادات الموقع</h2>
-            <input id="siteTitle" placeholder="اسم الموقع">
-            <input id="phone" placeholder="رقم الهاتف">
-            <input id="locationName" placeholder="اسم الموقع">
-            <input id="mapUrl" value="https://maps.app.goo.gl/BCq1bYCt6n1ikpqB7">
-            <input id="hours" placeholder="أوقات العمل">
-            <textarea id="heroText" placeholder="وصف الموقع"></textarea>
-            <button id="saveButton" class="admin-btn primary">حفظ الإعدادات</button>
-            <p id="saveMessage"></p>
+            <button id="loginButton" class="admin-btn primary block">
+                <i class="fas fa-right-to-bracket"></i> تسجيل الدخول
+            </button>
+            <p id="loginMessage" class="admin-message"></p>
+        </div>
+    </section>
 
-            <h2>المنتجات</h2>
-            <div id="productsAdmin"></div>
-            <button id="addProductButton" class="admin-btn primary">إضافة منتج</button>
-            <p id="productsMessage"></p>
+    <div id="dashboard" hidden class="admin-app">
+        <header class="admin-topbar">
+            <div class="admin-topbar-brand">
+                <i class="fas fa-motorcycle"></i>
+                <span>بوكسر البلديات</span>
+            </div>
+            <button id="logoutButton" class="admin-btn danger small">
+                <i class="fas fa-right-from-bracket"></i> خروج
+            </button>
+        </header>
 
-            <h2>الخدمات</h2>
-            <div id="servicesAdmin"></div>
-            <button id="addServiceButton" class="admin-btn primary">إضافة خدمة</button>
-            <p id="servicesMessage"></p>
+        <nav class="admin-tabs">
+            <button class="admin-tab active" data-tab="settings">
+                <i class="fas fa-gear"></i> الإعدادات
+            </button>
+            <button class="admin-tab" data-tab="products">
+                <i class="fas fa-box"></i> المنتجات
+            </button>
+            <button class="admin-tab" data-tab="services">
+                <i class="fas fa-screwdriver-wrench"></i> الخدمات
+            </button>
+            <button class="admin-tab" data-tab="delivery">
+                <i class="fas fa-truck"></i> التوصيل
+            </button>
+            <button class="admin-tab" data-tab="testimonials">
+                <i class="fas fa-star"></i> التقييمات
+            </button>
+        </nav>
 
-            <h2>مناطق وتكاليف التوصيل</h2>
-            <div id="deliveryZonesAdmin"></div>
-            <button id="addZoneButton" class="admin-btn primary">إضافة منطقة توصيل</button>
-            <p id="deliveryZonesMessage"></p>
+        <main class="admin-content">
+            <section class="admin-panel-section" id="tab-settings">
+                <div class="admin-section-header">
+                    <h2><i class="fas fa-gear"></i> إعدادات الموقع</h2>
+                    <p>معلومات عامة تظهر بكل صفحات الموقع الرئيسي</p>
+                </div>
 
-            <h2>آراء الزبائن</h2>
-            <div id="testimonialsAdmin"></div>
-            <button id="addTestimonialButton" class="admin-btn primary">إضافة رأي زبون</button>
-            <p id="testimonialsMessage"></p>
-        </section>
-    </main>
+                <label for="siteTitle">اسم الموقع</label>
+                <input id="siteTitle" placeholder="مثال: بوكسر البلديات">
+
+                <label for="phone">رقم الهاتف</label>
+                <input id="phone" placeholder="مثال: 07713733002">
+
+                <label for="locationName">اسم الموقع الجغرافي (يظهر بقسم التوصيل والتواصل)</label>
+                <input id="locationName" placeholder="مثال: بوكسر البلديات، بغداد">
+
+                <label for="mapUrl">رابط خرائط جوجل</label>
+                <input id="mapUrl" value="https://maps.app.goo.gl/BCq1bYCt6n1ikpqB7">
+
+                <label for="hours">أوقات العمل</label>
+                <input id="hours" placeholder="مثال: السبت - الخميس: 8 ص - 9 م">
+
+                <label for="heroText">وصف الصفحة الرئيسية</label>
+                <textarea id="heroText" placeholder="وصف قصير يظهر بأول الموقع"></textarea>
+
+                <button id="saveButton" class="admin-btn primary block">
+                    <i class="fas fa-floppy-disk"></i> حفظ الإعدادات
+                </button>
+                <p id="saveMessage" class="admin-message"></p>
+            </section>
+
+            <section class="admin-panel-section" id="tab-products" hidden>
+                <div class="admin-section-header">
+                    <h2><i class="fas fa-box"></i> المنتجات</h2>
+                    <p>قطع الغيار والمنتجات المعروضة بالموقع الرئيسي</p>
+                </div>
+                <div id="productsAdmin"></div>
+                <button id="addProductButton" class="admin-btn primary block">
+                    <i class="fas fa-plus"></i> إضافة منتج جديد
+                </button>
+                <p id="productsMessage" class="admin-message"></p>
+            </section>
+
+            <section class="admin-panel-section" id="tab-services" hidden>
+                <div class="admin-section-header">
+                    <h2><i class="fas fa-screwdriver-wrench"></i> الخدمات</h2>
+                    <p>خدمات الصيانة المعروضة بالموقع الرئيسي</p>
+                </div>
+                <div id="servicesAdmin"></div>
+                <button id="addServiceButton" class="admin-btn primary block">
+                    <i class="fas fa-plus"></i> إضافة خدمة جديدة
+                </button>
+                <p id="servicesMessage" class="admin-message"></p>
+            </section>
+
+            <section class="admin-panel-section" id="tab-delivery" hidden>
+                <div class="admin-section-header">
+                    <h2><i class="fas fa-truck"></i> مناطق وتكاليف التوصيل</h2>
+                    <p>المناطق وأسعار التوصيل المعروضة بقسم "التوصيل"</p>
+                </div>
+                <div id="deliveryZonesAdmin"></div>
+                <button id="addZoneButton" class="admin-btn primary block">
+                    <i class="fas fa-plus"></i> إضافة منطقة توصيل
+                </button>
+                <p id="deliveryZonesMessage" class="admin-message"></p>
+            </section>
+
+            <section class="admin-panel-section" id="tab-testimonials" hidden>
+                <div class="admin-section-header">
+                    <h2><i class="fas fa-star"></i> آراء الزبائن</h2>
+                    <p>التقييمات المعروضة بقسم "آراء زبائننا"</p>
+                </div>
+                <div id="testimonialsAdmin"></div>
+                <button id="addTestimonialButton" class="admin-btn primary block">
+                    <i class="fas fa-plus"></i> إضافة رأي زبون
+                </button>
+                <p id="testimonialsMessage" class="admin-message"></p>
+            </section>
+        </main>
+    </div>
 
     <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
     <script src="assets/js/supabase-client.js"></script>
     <script src="assets/js/admin/utils.js"></script>
+    <script src="assets/js/admin/ui.js"></script>
     <script src="assets/js/admin/auth.js"></script>
     <script src="assets/js/admin/settings.js"></script>
     <script src="assets/js/admin/products.js"></script>

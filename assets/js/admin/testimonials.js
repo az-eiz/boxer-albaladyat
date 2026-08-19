@@ -20,8 +20,8 @@ async function loadTestimonials() {
             <label>نص التقييم</label>
             <textarea class="testimonial-comment">${escapeHtml(testimonial.comment || "")}</textarea>
 
-            <button class="save-testimonial btn btn-primary">حفظ التقييم</button>
-            <button class="delete-testimonial btn">حذف التقييم</button>
+            <button class="save-testimonial admin-btn primary small"><i class="fas fa-floppy-disk"></i> حفظ التقييم</button>
+            <button class="delete-testimonial admin-btn danger small"><i class="fas fa-trash"></i> حذف التقييم</button>
         </article>
     `).join("");
 

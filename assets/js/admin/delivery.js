@@ -26,8 +26,8 @@ async function loadDeliveryZones() {
             <label>ترتيب الظهور</label>
             <input class="zone-sort-order" type="number" value="${zone.sort_order || 0}">
 
-            <button class="save-zone btn btn-primary">حفظ المنطقة</button>
-            <button class="delete-zone btn">حذف المنطقة</button>
+            <button class="save-zone admin-btn primary small"><i class="fas fa-floppy-disk"></i> حفظ المنطقة</button>
+            <button class="delete-zone admin-btn danger small"><i class="fas fa-trash"></i> حذف المنطقة</button>
         </article>
     `).join("");
 
