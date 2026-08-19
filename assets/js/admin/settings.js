@@ -16,10 +16,10 @@ async function loadSettings() {
     $("phone").value = settings.phone || "";
     $("hours").value = settings.hours || "";
     $("heroText").value = settings.heroText || "";
-    $("locationName").value = settings.locationName || "";
+    $("locationName").value = settings.locationName || "بوكسر البلديات، بغداد";
     $("mapUrl").value =
         settings.mapUrl ||
-        "https://maps.app.goo.gl/Dqd6VUGC9ceePGnq6";
+        "https://maps.app.goo.gl/BCq1bYCt6n1ikpqB7";
 }
 
 async function saveSettings() {

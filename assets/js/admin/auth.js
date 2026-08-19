@@ -1,3 +1,11 @@
+async function loadDashboard() {
+    await loadSettings();
+    await loadProducts();
+    await loadServices();
+    await loadDeliveryZones();
+    await loadTestimonials();
+}
+
 function wireAuth() {
     $("loginButton").addEventListener("click", async () => {
         const { error } = await window.db.auth.signInWithPassword({
@@ -13,9 +21,7 @@ function wireAuth() {
         $("loginBox").hidden = true;
         $("dashboard").hidden = false;
 
-        await loadSettings();
-        await loadProducts();
-        await loadServices();
+        await loadDashboard();
     });
 
     $("logoutButton").addEventListener("click", async () => {
@@ -31,8 +37,6 @@ async function checkExistingSession() {
     if (data.session) {
         $("loginBox").hidden = true;
         $("dashboard").hidden = false;
-        await loadSettings();
-        await loadProducts();
-        await loadServices();
+        await loadDashboard();
     }
 }

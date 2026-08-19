@@ -7,6 +7,7 @@
     "gallery",
     "faq",
     "delivery",
+    "testimonials",
     "contact",
     "floating-ui",
     "footer"
@@ -57,6 +58,7 @@ async function loadComponents() {
 
     await loadScript("https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2");
     await loadScript("assets/js/supabase-client.js");
+    await loadScript("assets/js/public/site-settings.js");
     await loadScript("assets/js/public/navigation.js");
     await loadScript("assets/js/public/scroll-effects.js");
     await loadScript("assets/js/public/shop-clock.js");
@@ -64,6 +66,8 @@ async function loadComponents() {
     await loadScript("assets/js/public/faq.js");
     await loadScript("assets/js/public/products.js");
     await loadScript("assets/js/public/services.js");
+    await loadScript("assets/js/public/delivery-zones.js");
+    await loadScript("assets/js/public/testimonials.js");
     await loadScript("assets/js/features/contact-form.js");
 }
 
