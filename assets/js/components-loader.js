@@ -27,6 +27,16 @@ async function fetchWithFallback(url) {
     }
 }
 
+async function loadScript(src) {
+    return new Promise((resolve, reject) => {
+        const script = document.createElement("script");
+        script.src = src;
+        script.onload = resolve;
+        script.onerror = reject;
+        document.head.appendChild(script);
+    });
+}
+
 async function loadComponents() {
     for (const name of components) {
         const target = document.querySelector(`[data-component="${name}"]`);
@@ -35,9 +45,8 @@ async function loadComponents() {
         target.innerHTML = html;
     }
     // تحميل الـ main.js بعد المكونات
-    const mainScript = document.createElement("script");
-    mainScript.src = "assets/js/main.js";
-    document.body.appendChild(mainScript);
+    await loadScript("https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2");
+    await loadScript("assets/js/main.js");
 }
 
-loadComponents().catch(err => console.error('Component loader error:', err));
+loadComponents().catch(console.error);
