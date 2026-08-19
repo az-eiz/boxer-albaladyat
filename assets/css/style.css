@@ -868,3 +868,36 @@ section {
         bottom: 4.8rem;
     }
 }
+
+.admin-panel {
+    width: min(700px, 92%);
+    margin: 3rem auto;
+    padding: 2rem;
+    background: #ffffff;
+    border-radius: 18px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, .08);
+}
+
+.admin-panel h1,
+.admin-panel h2 {
+    margin-bottom: 1.5rem;
+}
+
+.admin-panel label {
+    display: block;
+    margin-top: 1rem;
+    font-weight: 700;
+}
+
+.admin-panel input,
+.admin-panel textarea {
+    width: 100%;
+    margin-top: .4rem;
+    padding: .8rem;
+    border: 1px solid #d5dce0;
+    border-radius: 8px;
+}
+
+.admin-panel button {
+    margin-top: 1.2rem;
+}

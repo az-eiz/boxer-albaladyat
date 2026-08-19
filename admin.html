@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>لوحة تحكم Boxer</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+
+<body>
+    <main class="admin-panel">
+        <h1>لوحة تحكم Boxer Albaladyat</h1>
+
+        <section id="loginBox">
+            <h2>تسجيل الدخول</h2>
+            <label>البريد الإلكتروني</label>
+            <input id="email" type="email">
+
+            <label>كلمة المرور</label>
+            <input id="password" type="password">
+
+            <button id="loginButton" class="btn btn-primary">دخول</button>
+            <p id="loginMessage"></p>
+        </section>
+
+        <section id="dashboard" hidden>
+            <button id="logoutButton" class="btn">تسجيل الخروج</button>
+
+            <h2>إعدادات الموقع</h2>
+
+            <label>اسم الموقع</label>
+            <input id="locationName" type="text" value="موقع المحل">
+
+            <label>رابط Google Maps</label>
+            <input id="mapUrl" type="url" value="https://maps.app.goo.gl/Dqd6VUGC9ceePGnq6">
+
+            <label>رقم الهاتف وواتساب</label>
+            <input id="phone" type="text">
+
+            <label>العنوان</label>
+            <input id="address" type="text">
+
+            <label>أوقات الدوام</label>
+            <input id="hours" type="text">
+
+            <label>وصف الصفحة الرئيسية</label>
+            <textarea id="heroText" rows="5"></textarea>
+
+            <button id="saveButton" class="btn btn-primary">
+                حفظ التعديلات
+            </button>
+
+            <p id="saveMessage"></p>
+        </section>
+
+        <hr>
+
+        <h2>إدارة المنتجات</h2>
+        <div id="productsAdmin"></div>
+
+        <button id="addProductButton" class="btn btn-primary">
+            إضافة منتج جديد
+        </button>
+
+        <p id="productsMessage"></p>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="assets/js/admin.js"></script>
+</body>
+
+</html>
