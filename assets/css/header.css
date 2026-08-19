@@ -40,6 +40,19 @@ header {
     font-size: .72rem;
 }
 
+.rating-badge {
+    display: flex;
+    align-items: center;
+    gap: .3rem;
+    background: rgba(245, 158, 11, .15);
+    color: var(--accent);
+    padding: .35rem .7rem;
+    border-radius: 999px;
+    font-size: .78rem;
+    font-weight: 800;
+    white-space: nowrap;
+}
+
 .nav-links {
     display: flex;
     gap: 1.5rem;

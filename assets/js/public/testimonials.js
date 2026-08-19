@@ -22,8 +22,25 @@
         ).join("");
     }
 
+    function updateRatingBadge(testimonials) {
+        const badge = document.getElementById("ratingBadge");
+        const text = document.getElementById("ratingBadgeText");
+
+        if (!badge || !text) return;
+
+        if (!testimonials.length) {
+            badge.hidden = true;
+            return;
+        }
+
+        const average = testimonials.reduce((sum, t) => sum + (Number(t.rating) || 0), 0) / testimonials.length;
+        text.textContent = `${average.toFixed(1)} (${testimonials.length})`;
+        badge.hidden = false;
+    }
+
     function renderTestimonials(testimonials) {
         if (section) section.hidden = testimonials.length === 0;
+        updateRatingBadge(testimonials);
 
         grid.innerHTML = testimonials.map(testimonial => `
             <div class="testimonial-card reveal">
