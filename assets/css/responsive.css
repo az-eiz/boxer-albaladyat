@@ -1,0 +1,100 @@
+@media (max-width: 900px) {
+
+    .nav-links,
+    .contact-info-header {
+        display: none;
+    }
+
+    .services-grid,
+    .products-grid,
+    .gallery-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .process-steps {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .footer-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    section {
+        padding: 4rem 0;
+    }
+
+    .header-content {
+        min-height: 68px;
+    }
+
+    .hero {
+        min-height: 590px;
+    }
+
+    .hero-content {
+        padding: 5rem 0;
+    }
+
+    .hero h2 {
+        font-size: 2.3rem;
+    }
+
+    .hero-buttons,
+    .btn {
+        width: 100%;
+    }
+
+    .services-grid,
+    .products-grid,
+    .gallery-grid,
+    .process-steps,
+    .delivery-grid,
+    .delivery-cards,
+    .contact-grid,
+    .footer-container {
+        grid-template-columns: 1fr;
+    }
+
+    .form-row {
+        grid-template-columns: 1fr;
+    }
+
+    .mobile-nav {
+        position: fixed;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        z-index: 800;
+        display: flex;
+        justify-content: space-around;
+        padding: .5rem;
+        background: var(--dark);
+        color: #cbd5db;
+    }
+
+    .mobile-nav-item {
+        display: grid;
+        gap: .1rem;
+        justify-items: center;
+        font-size: .7rem;
+    }
+
+    .mobile-nav-item i {
+        font-size: 1rem;
+    }
+
+    .mobile-nav-item.active,
+    .mobile-nav-cta {
+        color: var(--accent);
+    }
+
+    .whatsapp-float {
+        bottom: 4.8rem;
+    }
+
+    .back-to-top {
+        bottom: 4.8rem;
+    }
+}

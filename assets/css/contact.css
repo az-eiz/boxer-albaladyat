@@ -1,0 +1,81 @@
+.contact-section {
+    background: var(--dark);
+    color: white;
+}
+
+.contact-section h3,
+.contact-section h4 {
+    color: white;
+}
+
+.contact-info-box,
+.contact-form-box {
+    padding: 2rem;
+    border-radius: var(--radius);
+    background: var(--dark-2);
+}
+
+.contact-methods-list {
+    display: grid;
+    gap: .7rem;
+    margin-top: 1.5rem;
+}
+
+.contact-method-card {
+    display: flex;
+    align-items: center;
+    gap: .8rem;
+    padding: .8rem;
+    border-radius: 12px;
+    background: rgba(255, 255, 255, .06);
+}
+
+.method-icon {
+    width: 42px;
+    height: 42px;
+    display: grid;
+    place-items: center;
+    border-radius: 10px;
+}
+
+.method-info p {
+    color: #fbbf24;
+}
+
+.contact-form {
+    display: grid;
+    gap: 1rem;
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+}
+
+.form-group {
+    display: grid;
+    gap: .35rem;
+}
+
+.form-group label {
+    font-size: .85rem;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    border: 1px solid #46535d;
+    border-radius: 8px;
+    padding: .75rem;
+    background: #17232d;
+    color: white;
+    outline: none;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    border-color: var(--accent);
+}

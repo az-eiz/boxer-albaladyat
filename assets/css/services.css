@@ -1,0 +1,28 @@
+.services-grid {
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.service-card {
+    padding: 1.7rem;
+    text-align: center;
+    transition: transform .2s, box-shadow .2s;
+}
+
+.service-icon-wrap {
+    width: 58px;
+    height: 58px;
+    margin: 0 auto 1rem;
+    display: grid;
+    place-items: center;
+    border-radius: 14px;
+    background: #fff7ed;
+    color: var(--primary);
+    font-size: 1.5rem;
+}
+
+.service-price {
+    display: block;
+    color: var(--primary);
+    font-weight: 800;
+    margin-top: 1rem;
+}

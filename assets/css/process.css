@@ -1,0 +1,29 @@
+.process-steps {
+    grid-template-columns: repeat(4, 1fr);
+}
+
+.step {
+    text-align: center;
+    padding: 1rem;
+}
+
+.step-number {
+    width: 42px;
+    height: 42px;
+    margin: 0 auto .8rem;
+    display: grid;
+    place-items: center;
+    border-radius: 50%;
+    background: var(--primary);
+    color: white;
+    font-weight: 800;
+}
+
+.step-icon {
+    color: var(--primary);
+    font-size: 1.5rem;
+}
+
+.step h4 {
+    margin: .5rem 0;
+}

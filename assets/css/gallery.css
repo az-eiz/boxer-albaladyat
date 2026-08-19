@@ -1,0 +1,55 @@
+.gallery-tabs {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: .6rem;
+    margin-bottom: 2rem;
+}
+
+.gallery-tab {
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: .55rem 1rem;
+    background: white;
+    color: var(--muted);
+    cursor: pointer;
+}
+
+.gallery-tab.active,
+.gallery-tab:hover {
+    background: var(--dark);
+    color: white;
+}
+
+.gallery-grid {
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.gallery-item {
+    min-height: 260px;
+    border-radius: var(--radius);
+    background-size: cover;
+    background-position: center;
+    overflow: hidden;
+    position: relative;
+}
+
+.gallery-item::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(transparent 35%, rgba(0, 0, 0, .8));
+}
+
+.gallery-overlay {
+    position: absolute;
+    right: 1rem;
+    bottom: 1rem;
+    left: 1rem;
+    color: white;
+}
+
+.gallery-overlay p {
+    color: #d1d5db;
+    font-size: .8rem;
+}

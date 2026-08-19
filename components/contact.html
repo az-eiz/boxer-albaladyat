@@ -82,80 +82,80 @@
             <div class="contact-form-box reveal">
                 <h3>أرسل طلبك الآن</h3>
                 <p>املأ النموذج وسيتواصل معك فريقنا خلال أقل من 10 دقائق عبر واتساب</p>
-                <form id="contactForm" class="contact-form" novalidate>
-                    <div class="form-row">
-                        <div class="form-group">
-                            <label for="customerName">الاسم الكامل *</label>
-                            <input type="text" id="customerName" name="customerName" placeholder="مثال: أحمد محمد"
-                                required minlength="2">
-                        </div>
-                        <div class="form-group">
-                            <label for="customerPhone">رقم الهاتف *</label>
-                            <input type="tel" id="customerPhone" name="customerPhone" placeholder="07xxxxxxxx" required
-                                pattern="[0-9\s\-+]{10,15}">
-                        </div>
-                    </div>
-                    <div class="form-row">
-                        <div class="form-group">
-                            <label for="customerGovernorate">المحافظة *</label>
-                            <select id="customerGovernorate" name="customerGovernorate" required>
-                                <option value="">-- اختر محافظتك --</option>
-                                <option value="بغداد">بغداد</option>
-                                <option value="البصرة">البصرة</option>
-                                <option value="نينوى">نينوى (الموصل)</option>
-                                <option value="أربيل">أربيل</option>
-                                <option value="السليمانية">السليمانية</option>
-                                <option value="دهوك">دهوك</option>
-                                <option value="كركوك">كركوك</option>
-                                <option value="الأنبار">الأنبار (الرمادي)</option>
-                                <option value="كربلاء">كربلاء المقدسة</option>
-                                <option value="النجف">النجف الأشرف</option>
-                                <option value="بابل">بابل (الحلة)</option>
-                                <option value="واسط">واسط (الكوت)</option>
-                                <option value="ذي قار">ذي قار (الناصرية)</option>
-                                <option value="ميسان">ميسان (العمارة)</option>
-                                <option value="المثنى">المثنى (السماوة)</option>
-                                <option value="قادسية">قادسية (الديوانية)</option>
-                                <option value="الكاظمية">الكاظمية</option>
-                                <option value="صلاح الدين">صلاح الدين (تكريت)</option>
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <label for="serviceType">نوع الطلب *</label>
-                            <select id="serviceType" name="serviceType" required>
-                                <option value="">-- اختر نوع الخدمة --</option>
-                                <option value="صيانة دورية">صيانة دورية</option>
-                                <option value="اصلاح عطل">إصلاح عطل مفاجئ</option>
-                                <option value="شراء قطع غيار">شراء قطع غيار أصلية</option>
-                                <option value="شراء دراجة جديدة">شراء دراجة بوكسر جديدة</option>
-                                <option value="تلوين واكسسوارات">تلوين واكسسوارات</option>
-                                <option value="تشخيص مجاني">تشخيص مجاني للعطل</option>
-                                <option value="استفسار عام">استفسار عام</option>
-                            </select>
-                        </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="customerName">الاسم الكامل *</label>
+                        <input type="text" id="customerName" name="customerName" placeholder="مثال: أحمد محمد" required
+                            minlength="2">
                     </div>
                     <div class="form-group">
-                        <label for="customerMessage">تفاصيل الطلب</label>
-                        <textarea id="customerMessage" name="customerMessage" rows="4"
-                            placeholder="اكتب هنا تفاصيل عطل دراجتك أو القطع التي تريدها..."></textarea>
+                        <label for="customerPhone">رقم الهاتف *</label>
+                        <input type="tel" id="customerPhone" name="customerPhone" placeholder="07xxxxxxxx" required
+                            pattern="[0-9\s\-+]{10,15}">
                     </div>
-                    <label>صورة الخدمة</label>
-                    <input class="service-file" type="file" accept="image/*">
-                    <button type="submit" class="btn btn-primary"
-                        style="width: 100%; justify-content: center; font-size: 1.1rem; padding: 1rem 1.5rem;">
-                        <i class="fab fa-whatsapp"></i>
-                        إرسال الطلب عبر واتساب
-                    </button>
-                    <p style="margin-top: 0.9rem; text-align: center; font-size: 0.85rem; color: var(--muted);">
-                        <i class="fas fa-lock" style="color: var(--accent);"></i>
-                        معلوماتك آمنة 100% ولن نشاركها مع أي جهة ثالثة
-                    </p>
-                </form>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="customerGovernorate">المحافظة *</label>
+                        <select id="customerGovernorate" name="customerGovernorate" required>
+                            <option value="">-- اختر محافظتك --</option>
+                            <option value="بغداد">بغداد</option>
+                            <option value="البصرة">البصرة</option>
+                            <option value="نينوى">نينوى (الموصل)</option>
+                            <option value="أربيل">أربيل</option>
+                            <option value="السليمانية">السليمانية</option>
+                            <option value="دهوك">دهوك</option>
+                            <option value="كركوك">كركوك</option>
+                            <option value="الأنبار">الأنبار (الرمادي)</option>
+                            <option value="كربلاء">كربلاء المقدسة</option>
+                            <option value="النجف">النجف الأشرف</option>
+                            <option value="بابل">بابل (الحلة)</option>
+                            <option value="واسط">واسط (الكوت)</option>
+                            <option value="ذي قار">ذي قار (الناصرية)</option>
+                            <option value="ميسان">ميسان (العمارة)</option>
+                            <option value="المثنى">المثنى (السماوة)</option>
+                            <option value="قادسية">قادسية (الديوانية)</option>
+                            <option value="الكاظمية">الكاظمية</option>
+                            <option value="صلاح الدين">صلاح الدين (تكريت)</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="serviceType">نوع الطلب *</label>
+                        <select id="serviceType" name="serviceType" required>
+                            <option value="">-- اختر نوع الخدمة --</option>
+                            <option value="صيانة دورية">صيانة دورية</option>
+                            <option value="اصلاح عطل">إصلاح عطل مفاجئ</option>
+                            <option value="شراء قطع غيار">شراء قطع غيار أصلية</option>
+                            <option value="شراء دراجة جديدة">شراء دراجة بوكسر جديدة</option>
+                            <option value="تلوين واكسسوارات">تلوين واكسسوارات</option>
+                            <option value="تشخيص مجاني">تشخيص مجاني للعطل</option>
+                            <option value="استفسار عام">استفسار عام</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="customerMessage">تفاصيل الطلب</label>
+                    <textarea id="customerMessage" name="customerMessage" rows="4"
+                        placeholder="اكتب هنا تفاصيل عطل دراجتك أو القطع التي تريدها..."></textarea>
+                </div>
+
+
+                <button type="button" id="contactSubmit" class="btn btn-primary"
+                    style="width: 100%; justify-content: center; font-size: 1.1rem; padding: 1rem 1.5rem;">
+                    <i class="fab fa-whatsapp"></i>
+                    إرسال الطلب عبر واتساب
+                </button>
+                <p id="contactFormMessage" style="margin-top: 0.6rem; text-align: center; font-size: 0.85rem; color: var(--accent);"></p>
+                <p style="margin-top: 0.9rem; text-align: center; font-size: 0.85rem; color: var(--muted);">
+                    <i class="fas fa-lock" style="color: var(--accent);"></i>
+                    معلوماتك آمنة 100% ولن نشاركها مع أي جهة ثالثة
+                </p>
             </div>
         </div>
     </div>
 </section>
 
-<a href="https://maps.app.goo.gl/Dqd6VUGC9ceePGnq6" target="_blank" rel="noopener">
+<a href="https://maps.app.goo.gl/Dqd6VUGC9ceePGnq6" target="_blank" rel="noopener noreferrer">
     بوكسر البلديات
 </a>

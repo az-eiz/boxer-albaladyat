@@ -1,0 +1,28 @@
+.faq-list {
+    width: min(850px, 92%);
+    margin: auto;
+}
+
+.faq-item {
+    margin-bottom: .8rem;
+    overflow: hidden;
+}
+
+.faq-question {
+    padding: 1.1rem 1.3rem;
+    display: flex;
+    justify-content: space-between;
+    cursor: pointer;
+    font-weight: 700;
+}
+
+.faq-answer {
+    display: none;
+    padding: 0 1.3rem 1.2rem;
+    color: var(--muted);
+    font-size: .9rem;
+}
+
+.faq-item.active .faq-answer {
+    display: block;
+}

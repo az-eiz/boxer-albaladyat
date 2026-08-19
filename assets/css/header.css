@@ -1,0 +1,81 @@
+header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background: rgba(23, 32, 42, .97);
+    border-bottom: 1px solid rgba(255, 255, 255, .08);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, .12);
+}
+
+.header-content {
+    width: min(1180px, 92%);
+    min-height: 82px;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: .8rem;
+    color: white;
+}
+
+.logo-icon {
+    color: var(--accent);
+    font-size: 2rem;
+}
+
+.logo h1 {
+    font-size: 1.15rem;
+    font-weight: 800;
+    line-height: 1.2;
+}
+
+.logo span {
+    color: #b9c3ca;
+    font-size: .72rem;
+}
+
+.nav-links {
+    display: flex;
+    gap: 1.5rem;
+    list-style: none;
+}
+
+.nav-links a {
+    color: #d8e0e5;
+    font-size: .9rem;
+    transition: color .2s ease;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+    color: var(--accent);
+}
+
+.contact-info-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    color: #d8e0e5;
+    font-size: .78rem;
+}
+
+.contact-item,
+.live-clock {
+    display: flex;
+    align-items: center;
+    gap: .35rem;
+}
+
+.contact-item i {
+    color: #25d366;
+}
+
+.status-badge {
+    color: #86efac;
+}
